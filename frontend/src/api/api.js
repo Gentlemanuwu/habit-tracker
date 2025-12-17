@@ -3,7 +3,7 @@ import toast from 'react-hot-toast';
 
 // Создаем экземпляр axios с базовой конфигурацией
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: 'https://crazy-trees-work.loca.lt/api',
   headers: {
     'Content-Type': 'application/json',
   },
