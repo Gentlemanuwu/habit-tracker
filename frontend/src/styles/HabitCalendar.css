@@ -1,0 +1,153 @@
+.habit-calendar {
+  background: white;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.calendar-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #1f2937;
+  text-transform: capitalize;
+}
+
+.btn-month {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: #6366f1;
+  border-radius: 0.5rem;
+  transition: background 0.2s;
+}
+
+.btn-month:hover {
+  background: #f3f4f6;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #6b7280;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+}
+
+.calendar-day.empty {
+  background: none;
+  cursor: default;
+}
+
+.calendar-day.future {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.calendar-day.today {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+.calendar-day:not(.empty):not(.future):hover {
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+/* Интенсивность выполнения (как GitHub contributions) */
+.calendar-day.intensity-0 {
+  background: #ebedf0;
+}
+
+.calendar-day.intensity-1 {
+  background: #9be9a8;
+}
+
+.calendar-day.intensity-2 {
+  background: #40c463;
+}
+
+.calendar-day.intensity-3 {
+  background: #30a14e;
+}
+
+.day-number {
+  font-size: 0.8rem;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+.completion-indicator {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  font-size: 0.6rem;
+  color: white;
+}
+
+.calendar-legend {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f3f4f6;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.legend-item {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.25rem;
+}
+
+.calendar-loading {
+  text-align: center;
+  padding: 2rem;
+  color: #6b7280;
+}
+
+@media (max-width: 768px) {
+ .calendar-grid {
+    gap: 0.25rem;
+  }
+  
+ .day-number {
+    font-size: 0.7rem;
+  }
+  
+ .completion-indicator {
+    font-size: 0.5rem;
+  }
+}
